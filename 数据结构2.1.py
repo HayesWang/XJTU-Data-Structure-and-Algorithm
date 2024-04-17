@@ -53,3 +53,47 @@ for i in range(0,120):
 #测试display,size
 q.display()
 print("size: ",q.size())
+
+#class quene:
+#     def __init__(self,maxmize):
+#         self.maxmize = maxmize
+#         self.items=[0]*maxmize
+#         self.front=0
+#         self.rear=0
+#     def is_empty(self):
+#         return self.front ==self.rear
+#     def is_full(self):
+#         return (self.rear+1)%len(self.items)==self.front
+#     def size(self):
+#         return (self.rear-self.front+len(self.items))%self.maxmize
+#     def enqueue(self,item):
+#         if not self.is_full():
+#             self.items[self.rear]=item
+#             self.rear=(self.rear+1)%self.maxmize
+#         else:
+#             raise IndexError("Quene is full")
+#     def dequeue(self):
+#         if not self.is_empty():
+#             it=self.items[self.front]
+#             self.front=(self.front+1)%self.maxmize
+#             return it
+#         else:
+#             raise IndexError("Quene is empty")
+#     def display(self):
+#         i=self.front
+#         while i!=self.rear:
+#             print(self.items[i],end='')
+#             i=(i+1)%self.maxmize
+#         print()
+# 
+# #测试
+# q=quene(4)
+# print(q.is_empty())
+# q.enqueue(1)
+# q.enqueue(2)
+# q.enqueue(3)
+# print(q.is_full())
+# q.display()
+# print(q.dequeue())
+# q.display()
+# print(q.size())
