@@ -21,7 +21,7 @@ class Queue:
     def is_full(self):
         return (self.rear + 1)%self.maxSize == self.front
     def is_empty(self):
-        return self.items==[]
+        return self.front==self.rear
     def display(self):
         ctr=self.front
         while True: 
