@@ -23,7 +23,7 @@ class Stack:
 
     # 出栈
     def pop(self):
-        self.items.pop()
+        return self.items.pop()
 
     # 观察
     def peek(self):
@@ -75,10 +75,8 @@ for j in range(1,n+1):
     s.push(j)
 i=int(input("i:"))
 for j in range(i+1,n+1):
-    num=s.peek()
-    s.pop()
-    print(num,end=" ")
-    q.enqueue(num)
+    print(s.peek())
+    q.enqueue(s.pop())
 s.pop()
 for j in range(i+1,n+1):
     num=q.dequeue()
