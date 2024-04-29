@@ -1,3 +1,5 @@
+from Lib.Stack import Stack
+
 class Node:
     def __init__(self, data=None):
         self.data = data
@@ -30,4 +32,39 @@ class BinaryTree:
         return parent.lchild if parent else None
     def get_right_child(self, parent):
         return parent.rchild if parent else None
+
+    def preorder(self, node):
+        if node:
+            print(node.data, end=' ')
+            self.preorder(node.lchild)
+            self.preorder(node.rchild)
+
+    def inorder(self, node):
+        if node:
+            self.inorder(node.lchild)
+            print(node.data, end=' ')
+            self.inorder(node.rchild)
+
+    def postorder(self, node):
+        if node:
+            self.postorder(node.lchild)
+            self.postorder(node.rchild)
+            print(node.data, end=' ')
+
+    def no_rec_preorder(self,root):
+        if root == None:
+            return
+        stack = Stack()
+        node = root
+        while not stack.is_empty():
+            print(node.data,end=',')
+            if node.rchild:
+                stack.push(node.rchild)
+            if node.lchild:
+                node = node.lchild
+            else:
+                node = stack.pop()
+
+
+
 
